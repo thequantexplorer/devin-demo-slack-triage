@@ -11,6 +11,7 @@
   }
 
   function setQty(lines, sku, qty) {
+    qty = Math.max(0, Math.floor(Number(qty)) || 0);
     return lines
       .map((l) => (l.sku === sku ? { ...l, qty } : l))
       .filter((l) => l.qty > 0);

@@ -18,3 +18,16 @@ test('totals apply percent discounts', () => {
 test('money formats cents', () => {
   assert.strictEqual(Cart.money(34900), '$349.00');
 });
+
+test('typed quantity (string from input) is coerced to a number', () => {
+  let lines = Cart.setQty(Cart.addItem([], mug), mug.sku, '2');
+  assert.strictEqual(lines[0].qty, 2);
+  lines = Cart.addItem(lines, mug);
+  assert.strictEqual(lines[0].qty, 3);
+  assert.strictEqual(Cart.cartTotals(lines).subtotal, 5400);
+});
+
+test('invalid or negative typed quantity removes the line', () => {
+  assert.deepStrictEqual(Cart.setQty(Cart.addItem([], mug), mug.sku, ''), []);
+  assert.deepStrictEqual(Cart.setQty(Cart.addItem([], mug), mug.sku, '-3'), []);
+});
