@@ -9,8 +9,8 @@ More demos: [devin-advanced-demos](https://github.com/thequantexplorer/devin-adv
 ## Set it up
 
 1. Click **Use this template → Create a new repository** (or fork it) into your own GitHub account or org.
-2. In Devin, open **Settings → Integrations → GitHub** and make sure Devin can access the new repository.
-3. Connect **Slack** and **Linear** in Devin's integrations.
+2. In Devin, open [**Settings → Connections → GitHub**](https://app.devin.ai/settings/connections/github) and make sure Devin can access the new repository.
+3. Connect **Slack** and **Linear** in Devin under **Settings → Connections**.
 4. In Slack, create a `#support` channel and run `/invite @Devin` there. Devin ignores mentions in channels it hasn't joined.
 
 ## Prompt
